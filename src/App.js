@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import BreakControl from './break';
+import SessionControl from './session';
+import Timer from './timer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main id="clock">
+        <div className='container'>
+          <SessionControl class="sess"/>
+          <BreakControl class="break"/>
+        </div>
+        <Timer class="tim"/>
+      </main>
+      
     </div>
   );
 }
