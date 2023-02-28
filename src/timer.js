@@ -40,7 +40,7 @@ function Timer() {
     const start = () => {
         timerId.current = setInterval(()=> {
             setTime(prev => prev -1);
-        }, 100);
+        }, 1000);
         setRunning(()=>true); 
     }
 
