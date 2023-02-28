@@ -40,7 +40,7 @@ function Timer() {
     const start = () => {
         timerId.current = setInterval(()=> {
             setTime(prev => prev -1);
-        }, 1000);
+        }, 100);
         setRunning(()=>true); 
     }
 
@@ -74,7 +74,7 @@ function Timer() {
         <main id="timer-wrapper">
             
             {inBreak ? <p id="timer-label">Break</p> : <p id="timer-label">Session</p>}
-            <audio id="beep" src="/audio/beep-clock.mp3"></audio>
+            <audio id="beep" src={require("./audio/beep-clock.mp3")}></audio>
             <div id="time-left">{minutes}:{seconds}</div>
             {running ? <button id="start_stop" onClick={running ? stop : start}>stop</button> : <button id="start_stop" onClick={running ? stop : start}>start</button>}
             <button id="reset" onClick={reset}>reset</button>
