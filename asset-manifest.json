@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/session_timer/static/css/main.79116ca7.css",
+    "main.js": "/session_timer/static/js/main.2b269e12.js",
+    "index.html": "/session_timer/index.html",
+    "main.79116ca7.css.map": "/session_timer/static/css/main.79116ca7.css.map",
+    "main.2b269e12.js.map": "/session_timer/static/js/main.2b269e12.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.79116ca7.css",
+    "static/js/main.2b269e12.js"
+  ]
+}
