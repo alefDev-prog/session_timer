@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <main id="clock">
         <div className='container'>
-          <SessionControl class="sess"/>
-          <BreakControl class="break"/>
+          <SessionControl />
+          <BreakControl/>
         </div>
         <Timer class="tim"/>
       </main>
