@@ -36,7 +36,13 @@ const clockSlice = createSlice({
             state.breakLength = 5;
         },
         toggleRun: (state) => {
-            state.isRunning = !state.isRunning;
+            if(!state.isRunning) {
+                state.isRunning = true;
+            }
+            else {
+                state.isRunning = false;
+            }
+    
         }
     }
 

@@ -7,7 +7,20 @@ import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 function SessionControl(){
     const dispatch = useDispatch();
-    const {sessionLength} = useSelector((store)=> store.updateLength)
+    const {sessionLength, isRunning} = useSelector((store)=> store.updateLength)
+
+    const subLength = () => {
+        console.log(isRunning);
+        if (!isRunning) {
+            dispatch(subSession())
+        }
+    }
+
+    const addLength = () => {
+        if(!isRunning) {
+            dispatch(addSession());
+        }
+    }
 
     return(
         <div className='Control'>
@@ -15,9 +28,9 @@ function SessionControl(){
 
             <div className='Adjust'>
 
-            <FontAwesomeIcon id="session-increment"icon={faArrowDown} onClick={()=>sessionLength <= 1 ? console.log("Too low") : dispatch(subSession())}/>            
+            <FontAwesomeIcon id="session-increment"icon={faArrowDown} onClick={()=>sessionLength <= 1 ? console.log("Too low") : subLength()}/>            
             <p id="session-length">{sessionLength}</p> 
-            <FontAwesomeIcon id="session-decrement"icon={faArrowUp} onClick={()=>sessionLength >= 60 ? console.log("Too high") : dispatch(addSession())}/>
+            <FontAwesomeIcon id="session-decrement"icon={faArrowUp} onClick={()=>sessionLength >= 60 ? console.log("Too high") : addLength()}/>
                 
             </div>
         </div>
