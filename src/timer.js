@@ -12,6 +12,8 @@ function Timer() {
     const timerId = useRef();
     const timerColor = useRef("black");
 
+    
+
     useEffect(() => {
         setTime(()=> sessionLength*60)
         timerColor.current="black";
