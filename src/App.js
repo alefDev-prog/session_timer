@@ -7,11 +7,11 @@ function App() {
   return (
     <div className="App">
       <main id="clock">
+      <Timer class="tim"/>
         <div className='container'>
           <SessionControl />
           <BreakControl/>
         </div>
-        <Timer class="tim"/>
       </main>
       
     </div>

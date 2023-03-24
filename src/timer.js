@@ -10,13 +10,13 @@ function Timer() {
     const [running, setRunning] = useState(false);
     const [inBreak, setBreak] = useState(false);
     const timerId = useRef();
-    const timerColor = useRef("black");
+    const timerColor = useRef("white");
 
     
 
     useEffect(() => {
         setTime(()=> sessionLength*60)
-        timerColor.current="black";
+        timerColor.current="white";
     }, [sessionLength]);
 
     useEffect(() => {
@@ -33,7 +33,7 @@ function Timer() {
         }
 
         if (time < 30) timerColor.current="red";
-        else timerColor.current="black";
+        else timerColor.current="white";
         
     }, [time, breakLength, inBreak, sessionLength]);
 
@@ -87,15 +87,22 @@ function Timer() {
     
         <main id="timer-wrapper">
             
-            {inBreak ? <p id="timer-label">Break</p> : <p id="timer-label">Session</p>}
+            
             <audio id="beep" src={require("./audio/beep-clock.mp3")}></audio>
+
+            {inBreak ? <p id="timer-label">Break</p> : <p id="timer-label">Session</p>}
+
             <div id="time-left"  style={{color:timerColor.current}}>{minutes}:{seconds}</div>
 
-            {running ?
-              <button id="start_stop"  onClick={running ? stop : start}>stop</button>
-            : <button id="start_stop" onClick={running ? stop : start}>start</button>}
+            <section id="timer-btn-wrapper">
+                {running ?
+                <div className="timerBtn" id="start_stop"  onClick={running ? stop : start}>stop</div>
+                : <div className="timerBtn" id="start_stop" onClick={running ? stop : start}>start</div>}
 
-            <button id="reset" onClick={reset}>reset</button>
+                <div className="timerBtn" id="reset" onClick={reset}>reset</div>
+            </section>
+
+            
 
         </main>
     )
