@@ -1,4 +1,4 @@
-import './App.css';
+import './css/App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { addSession, subSession } from './redux/clock-slice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

@@ -1,4 +1,4 @@
-import './App.css';
+import './css/App.css';
 import { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { resetAll, toggleRun, started } from './redux/clock-slice';

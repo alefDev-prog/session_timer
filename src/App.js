@@ -1,4 +1,4 @@
-import './App.css';
+import './css/App.css';
 import BreakControl from './break';
 import SessionControl from './session';
 import Timer from './timer';
