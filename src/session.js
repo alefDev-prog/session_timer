@@ -2,8 +2,6 @@ import './css/App.css';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addSession, subSession, changeSession } from './redux/clock-slice';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 
 function SessionControl(){

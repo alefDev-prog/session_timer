@@ -48,9 +48,7 @@ function BreakControl() {
             {isReset ?
                 <input type="range" id="breakRange" name="breakRange" value={sliderPos} min="1" max="59"  onChange={changeLength}/>
                 : <input type="range" id="breakRange" name="breakRange" value={sliderPos} min="1" max="59" disabled onChange={changeLength}/>}
-                <FontAwesomeIcon icon={faArrowDown} id="break-decrement" onClick={()=>breakLength <= 1 ? console.log("Too low") :subLength()} />
                 <p id="break-length">{breakLength}</p>
-                <FontAwesomeIcon icon={faArrowUp} id="break-increment" onClick={()=>breakLength >= 60 ? console.log("Too high") :addLength()} />
             </div>
           
         </div>
