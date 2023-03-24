@@ -11,6 +11,9 @@ const clockSlice = createSlice({
     name: 'clock',
     initialState,
     reducers: {
+        changeSession: (state, action) => {
+            state.sessionLength = action.payload;
+        },
         addBreak: (state) => {
             if(state.breakLength < 60){
             state.breakLength++;
@@ -53,6 +56,6 @@ const clockSlice = createSlice({
 
 });
 
-export const {addBreak, subBreak, addSession, subSession, resetAll, toggleRun, started} = clockSlice.actions;
+export const {addBreak, subBreak, addSession, subSession, resetAll, toggleRun, started, changeSession} = clockSlice.actions;
 
 export const clockReducer = clockSlice.reducer;

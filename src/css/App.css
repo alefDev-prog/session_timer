@@ -89,6 +89,7 @@ html {
   height: 5rem;
   border-radius: 50%;
   background-color: red;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,13 +1,22 @@
 import './css/App.css';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addSession, subSession } from './redux/clock-slice';
+import { addSession, subSession, changeSession } from './redux/clock-slice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 
 function SessionControl(){
     const dispatch = useDispatch();
+    const [sliderPos, setSliderPos] = useState(25);
     const {sessionLength, isRunning, isReset} = useSelector((store)=> store.updateLength)
+
+    useEffect(()=> {
+        if(isReset) {
+            setSliderPos(25);
+        }
+    }, [isReset])
+    
 
     const subLength = () => {
         if (isReset) {
@@ -21,15 +30,26 @@ function SessionControl(){
         }
     }
 
+    const changeLength = () => {
+        if(isReset) {
+            const val = document.querySelector("#sessionRange").value;
+            dispatch(changeSession(val));
+            setSliderPos(val);
+        }
+    }
+
     return(
         <div className='Control'>
             <div id="session-label">Session Length</div>
 
             <div className='Adjust'>
-
-            <FontAwesomeIcon id="session-increment"icon={faArrowDown} onClick={()=>sessionLength <= 1 ? console.log("Too low") : subLength()}/>            
-            <p id="session-length">{sessionLength}</p> 
-            <FontAwesomeIcon id="session-decrement"icon={faArrowUp} onClick={()=>sessionLength >= 60 ? console.log("Too high") : addLength()}/>
+                {isReset ?
+                <input type="range" id="sessionRange" name="sessionRange" value={sliderPos} min="1" max="59"  onChange={changeLength}/>
+                : <input type="range" id="sessionRange" name="sessionRange" value={sliderPos} min="1" max="59" disabled onChange={changeLength}/>}
+                
+                        
+                <p id="session-length">{sessionLength}</p> 
+                
                 
             </div>
         </div>

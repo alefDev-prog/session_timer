@@ -37,7 +37,7 @@
     width: 50%;
     height: 60%;
     
-
+    
   
   }
   
@@ -81,7 +81,9 @@
             height: 5rem;
             border-radius: 50%;
             background-color: red;
+            cursor: pointer;
             @include flex_setup_col;
+            
         }
     }
   }
@@ -89,6 +91,7 @@
   #timer-label {
     font-size: 3rem;
     text-align: center;
+    
   }
   
   #time-left {
