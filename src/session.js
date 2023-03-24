@@ -18,18 +18,6 @@ function SessionControl(){
     }, [isReset])
     
 
-    const subLength = () => {
-        if (isReset) {
-            dispatch(subSession())
-        }
-    }
-
-    const addLength = () => {
-        if(isReset) {
-            dispatch(addSession());
-        }
-    }
-
     const changeLength = () => {
         if(isReset) {
             const val = document.querySelector("#sessionRange").value;
