@@ -34,7 +34,6 @@ function Timer() {
 
         if (time < 30) timerColor.current="red";
         else timerColor.current="black";
-        console.log(timerColor.current);
         
     }, [time, breakLength, inBreak, sessionLength]);
 
