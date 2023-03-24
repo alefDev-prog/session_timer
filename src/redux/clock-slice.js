@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     sessionLength: 25,
     breakLength: 5,
-    isRunning: false
+    isRunning: false,
+    isReset: true
 }
 
 const clockSlice = createSlice({
@@ -34,6 +35,8 @@ const clockSlice = createSlice({
         resetAll: (state) => {
             state.sessionLength = 25;
             state.breakLength = 5;
+            state.isRunning = false;
+            state.isReset = true;
         },
         toggleRun: (state) => {
             if(!state.isRunning) {
@@ -42,12 +45,14 @@ const clockSlice = createSlice({
             else {
                 state.isRunning = false;
             }
-    
+        },
+        started: (state) => {
+            state.isReset = false;
         }
     }
 
 });
 
-export const {addBreak, subBreak, addSession, subSession, resetAll, toggleRun} = clockSlice.actions;
+export const {addBreak, subBreak, addSession, subSession, resetAll, toggleRun, started} = clockSlice.actions;
 
 export const clockReducer = clockSlice.reducer;

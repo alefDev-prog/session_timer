@@ -7,17 +7,16 @@ import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 function SessionControl(){
     const dispatch = useDispatch();
-    const {sessionLength, isRunning} = useSelector((store)=> store.updateLength)
+    const {sessionLength, isRunning, isReset} = useSelector((store)=> store.updateLength)
 
     const subLength = () => {
-        console.log(isRunning);
-        if (!isRunning) {
+        if (isReset) {
             dispatch(subSession())
         }
     }
 
     const addLength = () => {
-        if(!isRunning) {
+        if(isReset) {
             dispatch(addSession());
         }
     }

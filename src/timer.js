@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { resetAll, toggleRun } from './redux/clock-slice';
+import { resetAll, toggleRun, started } from './redux/clock-slice';
 
 function Timer() {
     const dispatch = useDispatch();
@@ -47,7 +47,8 @@ function Timer() {
     
  
     const start = () => {
-        dispatch(toggleRun())
+        dispatch(toggleRun());
+        dispatch(started());
         timerId.current = setInterval(()=> {
             setTime(prev => prev -1);
         }, 100);
