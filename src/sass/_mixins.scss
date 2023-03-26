@@ -10,3 +10,8 @@
     align-items: center;
     flex-direction: column;
 }
+
+@mixin btnColor($color) {
+    box-shadow: 0 0 0 5px $color;
+    background-color: $color;
+}

@@ -42,6 +42,23 @@ function Timer() {
         aud.play();
     }
 
+    const btnStyling = (color) =>{
+     
+        if(color === "green") {
+            return {
+                boxShadow: "0 0 0 5px rgba(0,255,0,0.25)",
+                backgroundColor: "rgba(0,255,0,0.25)",
+                color: "rgb(0,255,0)"
+            };
+        }
+        else return {
+                boxShadow: "0 0 0 5px rgba(255, 0, 0, 0.3)",
+                backgroundColor: "rgba(255, 0, 0, 0.3)",
+                color: "rgb(255,50,50)"
+        }
+        
+        
+    }
     
     
  
@@ -96,8 +113,8 @@ function Timer() {
 
             <section id="timer-btn-wrapper">
                 {running ?
-                <div className="timerBtn" id="start_stop"  onClick={running ? stop : start}>stop</div>
-                : <div className="timerBtn" id="start_stop" onClick={running ? stop : start}>start</div>}
+                <div className="timerBtn" id="start_stop" style={btnStyling("red")} onClick={running ? stop : start}>stop</div>
+                : <div className="timerBtn" id="start_stop" style={btnStyling("green")} onClick={running ? stop : start}>start</div>}
 
                 <div className="timerBtn" id="reset" onClick={reset}>reset</div>
             </section>

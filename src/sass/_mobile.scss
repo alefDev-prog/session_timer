@@ -1,6 +1,7 @@
 @import '_reset.scss';
 @import '_variables.scss';
 @import '_mixins.scss';
+@import '_animations.scss';
 
 .App{
     width: 100%;
@@ -23,22 +24,34 @@
   
   #timer-wrapper{
     width: max-content;
+    padding-top:3rem;
     
 
     #timer-btn-wrapper {
         @include flex_setup_row;
         justify-content: space-between;
-        margin: 1rem 1rem;
+        margin: 5vh 1rem;
 
         .timerBtn {
             width: 5rem;
             height: 5rem;
             border-radius: 50%;
-            background-color: red;
+            outline: $gray-color solid 3px;
+            color:white;
             cursor: pointer;
             @include flex_setup_col;
+            font-size: 1.5rem;
+        }
+
+        #start_stop {
             
         }
+
+        #reset {
+          @include btnColor($reset-color);
+          color:rgb(219, 168, 108)
+        }
+
     }
   }
   
@@ -49,34 +62,62 @@
   }
   
   #time-left {
-    font-size: 7rem;
+    font-size: 9rem;
     font-weight: lighter;
-    text-align: center;
+    text-align: left;
     margin-bottom: 0.3rem;
+    padding: 1rem;
+    width: 4.78ch;
+    
   }
 
   .container {
+    
+    margin-top:10vh;
     @include flex_setup_col;
     justify-content: flex-start;
-    width: min-content;
+    width: 100%;
     #settings-title {
       text-align: center;
       width: 100%;
-      background-color: green;
+      background-color: black;
       padding: 1rem 2rem;
       cursor: pointer;
+      
+      #gear {
+        justify-self: center;
+        align-self: center;
+        padding-left: -5px;
+      }
+
+      .spinning {
+        transform-origin: 48% 50%;
+        animation-name: gear-animation;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
     }
     
     
   }
 
   #settings-wrapper {
+    width: 100%;
+    text-align: center;
     background-color: black;
     color:white;
+    font-size: 1.35rem;
     overflow: hidden;
     height: 0px;
     transition: all 0.5s ease-in-out;
     
+  }
+
+  #settings-wrapper {
+    .adjust-titles {
+      padding-bottom: 2rem;
+    }
   }
   
 

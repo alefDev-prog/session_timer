@@ -26,7 +26,7 @@ function SessionControl(){
 
     return(
         <div className='Control'>
-            <div id="session-label">Session Length</div>
+            <h2 id="session-label" className="adjust-titles">Session Length</h2>
 
             <div className='Adjust'>
                 {isReset ?

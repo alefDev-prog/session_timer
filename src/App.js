@@ -13,7 +13,14 @@ function App() {
 
   const showSettings = () => {
     toggleSettings(!settings);
-    console.log(settings);
+
+    //spinning gear
+    const gear = document.getElementById("gear");
+    gear.classList.add("spinning");
+    setTimeout(()=> {
+      gear.classList.remove("spinning");
+    }, 500);
+    
   }
 
   return (
@@ -22,8 +29,9 @@ function App() {
       <Timer class="tim"/>
         <div className='container'>
         
-            <h2 id="settings-title" onClick={() => showSettings()}>Settings   <FontAwesomeIcon icon={faGear} /></h2>
-            <div id="settings-wrapper" style={settings ? {height:100}: {}}>
+            <h2 id="settings-title"  onClick={() => showSettings()}><FontAwesomeIcon id="gear" icon={faGear} /></h2>
+            <div id="settings-wrapper" style={settings ? {height:200,
+    paddingTop: "1.5rem"}: {}}>
               <SessionControl />
               <BreakControl/>
             </div>

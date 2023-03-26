@@ -43,7 +43,7 @@ function BreakControl() {
     return (
         <div className='Control'>
             
-            <div id="break-label">Break Length</div>
+            <h2 id="break-label" className="adjust-titles">Break Length</h2>
             <div className='Adjust'>
             {isReset ?
                 <input type="range" id="breakRange" name="breakRange" value={sliderPos} min="1" max="59"  onChange={changeLength}/>
