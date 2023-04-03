@@ -106,11 +106,25 @@
     
   }
 
-  #settings-wrapper {
-    .adjust-titles {
-      padding-bottom: 2rem;
+  #settings-container {
+    max-width: 300px;
+    background-color: black;
+    border-radius: 2rem;
+
+    #settings-title {
+      border-radius: 2rem;
     }
+
+    #settings-wrapper {
+      border-radius: 0 0 2rem 2rem;
+      .adjust-titles {
+        padding-bottom: 2rem;
+      }
+    }
+    
   }
+
+  
   
 
   

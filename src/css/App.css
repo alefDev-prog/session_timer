@@ -119,6 +119,17 @@ html {
   transition: all 0.5s ease-in-out;
 }
 
-#settings-wrapper .adjust-titles {
+#settings-container {
+  max-width: 300px;
+  background-color: black;
+  border-radius: 2rem;
+}
+#settings-container #settings-title {
+  border-radius: 2rem;
+}
+#settings-container #settings-wrapper {
+  border-radius: 0 0 2rem 2rem;
+}
+#settings-container #settings-wrapper .adjust-titles {
   padding-bottom: 2rem;
 }/*# sourceMappingURL=App.css.map */

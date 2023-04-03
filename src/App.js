@@ -27,9 +27,9 @@ function App() {
     <div className="App">
       <main id="clock">
       <Timer class="tim"/>
-        <div className='container'>
+        <div className='container' id="settings-container">
         
-            <h2 id="settings-title"  onClick={() => showSettings()}><FontAwesomeIcon id="gear" icon={faGear} /></h2>
+            <h2 id="settings-title" onClick={() => showSettings()}><FontAwesomeIcon id="gear" icon={faGear} /></h2>
             <div id="settings-wrapper" style={settings ? {height:200,
     paddingTop: "1.5rem"}: {}}>
               <SessionControl />
