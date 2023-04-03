@@ -5,7 +5,7 @@ import { resetAll, toggleRun, started } from './redux/clock-slice';
 
 function Timer() {
     const dispatch = useDispatch();
-    const {sessionLength, breakLength} = useSelector((store) => store.updateLength);
+    const {sessionLength, breakLength, isReset} = useSelector((store) => store.updateLength);
     const [time, setTime] = useState(sessionLength*60);
     const [running, setRunning] = useState(false);
     const [inBreak, setBreak] = useState(false);
@@ -42,7 +42,7 @@ function Timer() {
         aud.play();
     }
 
-    const btnStyling = (color) =>{
+    const StartbtnStyling = (color) =>{
      
         if(color === "green") {
             return {
@@ -56,8 +56,20 @@ function Timer() {
                 backgroundColor: "rgba(255, 0, 0, 0.3)",
                 color: "rgb(255,50,50)"
         }
-        
-        
+    }
+
+    const ResetbtnStyling = () => {
+        if(isReset) return {
+          boxShadow: "0 0 0 5px rgba(138, 73, 0, 0.3)",
+          backgroundColor: "rgba(138, 73, 0, 0.3)",
+          color: "rgba(219, 168, 108,0.6)"
+        }
+
+        else return {
+          boxShadow: "0 0 0 5px rgba(138, 73, 0, 0.75)",
+          backgroundColor: "rgba(138, 73, 0, 0.75)",
+          color: "rgb(219, 168, 108)"
+        }
     }
     
     
@@ -117,10 +129,11 @@ function Timer() {
 
             <section id="timer-btn-wrapper">
                 {running ?
-                <div className="timerBtn" id="start_stop" style={btnStyling("red")} onClick={running ? stop : start}>stop</div>
-                : <div className="timerBtn" id="start_stop" style={btnStyling("green")} onClick={running ? stop : start}>start</div>}
+                <div className="timerBtn" id="start_stop" style={StartbtnStyling("red")} onClick={running ? stop : start}>stop</div>
+                :
+                <div className="timerBtn" id="start_stop" style={StartbtnStyling("green")} onClick={running ? stop : start}>start</div>}
 
-                <div className="timerBtn" id="reset" onClick={reset}>reset</div>
+                <div className="timerBtn" id="reset" onClick={reset} style={ResetbtnStyling()}>reset</div>
             </section>
 
             

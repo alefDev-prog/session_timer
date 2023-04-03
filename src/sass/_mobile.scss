@@ -43,15 +43,7 @@
             font-size: 1.5rem;
         }
 
-        #start_stop {
-            
-        }
-
-        #reset {
-          @include btnColor($reset-color);
-          color:rgb(219, 168, 108)
-        }
-
+        
     }
   }
   
