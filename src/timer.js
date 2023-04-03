@@ -76,6 +76,10 @@ function Timer() {
         clearInterval(timerId.current);
         timerId.current = 0;
         setRunning(()=>false);
+        let aud = document.getElementById("beep");
+        aud.pause();
+        aud.currentTime=0;
+
     }
 
     const reset = () => {
