@@ -10,3 +10,7 @@ Adjust how long you want your breaks to be.
 The timer will alternate between sessions and breaks.
 It could for example be used during gym-sessions.
 Between breaks and sessions it will produce a sound to alert you.
+
+## Errors
+
+Currently this app is not optimized for Safari browsers
