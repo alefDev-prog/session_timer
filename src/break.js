@@ -46,8 +46,8 @@ function BreakControl() {
             <h2 id="break-label" className="adjust-titles">Break Length</h2>
             <div className='Adjust'>
             {isReset ?
-                <input type="range" id="breakRange" name="breakRange" value={sliderPos} min="1" max="59"  onChange={changeLength}/>
-                : <input type="range" id="breakRange" name="breakRange" value={sliderPos} min="1" max="59" disabled onChange={changeLength}/>}
+                <input type="range" id="breakRange" name="breakRange" value={breakLength} min="1" max="59"  onChange={changeLength}/>
+                : <input type="range" id="breakRange" name="breakRange" value={breakLength} min="1" max="59" disabled onChange={changeLength}/>}
                 <p id="break-length">{breakLength}</p>
             </div>
           

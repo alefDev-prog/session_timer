@@ -59,7 +59,7 @@ function Timer() {
     }
 
     const ResetbtnStyling = () => {
-        if(isReset) return {
+        if(isReset && (sessionLength === 25 && breakLength === 5)) return {
           boxShadow: "0 0 0 5px rgba(138, 73, 0, 0.3)",
           backgroundColor: "rgba(138, 73, 0, 0.3)",
           color: "rgba(219, 168, 108,0.6)"

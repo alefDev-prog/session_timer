@@ -4,7 +4,8 @@ const initialState = {
     sessionLength: 25,
     breakLength: 5,
     isRunning: false,
-    isReset: true
+    isReset: true,
+
 }
 
 const clockSlice = createSlice({
@@ -13,6 +14,7 @@ const clockSlice = createSlice({
     reducers: {
         changeSession: (state, action) => {
             state.sessionLength = action.payload;
+            
         },
         changeBreak: (state, action) => {
             state.breakLength = action.payload;
@@ -43,6 +45,7 @@ const clockSlice = createSlice({
             state.breakLength = 5;
             state.isRunning = false;
             state.isReset = true;
+            
         },
         toggleRun: (state) => {
             if(!state.isRunning) {

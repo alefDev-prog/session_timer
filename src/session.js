@@ -7,7 +7,7 @@ import { addSession, subSession, changeSession } from './redux/clock-slice';
 function SessionControl(){
     const dispatch = useDispatch();
     const [sliderPos, setSliderPos] = useState(25);
-    const {sessionLength, isRunning, isReset} = useSelector((store)=> store.updateLength)
+    const {sessionLength, isReset} = useSelector((store)=> store.updateLength)
 
     useEffect(()=> {
         if(isReset) {
@@ -30,7 +30,7 @@ function SessionControl(){
 
             <div className='Adjust'>
                 {isReset ?
-                <input type="range" id="sessionRange" name="sessionRange" value={sliderPos} min="1" max="59"  onChange={changeLength}/>
+                <input type="range" id="sessionRange" name="sessionRange" value={sessionLength} min="1" max="59"  onChange={changeLength}/>
                 : <input type="range" id="sessionRange" name="sessionRange" value={sliderPos} min="1" max="59" disabled onChange={changeLength}/>}
                 
                         
